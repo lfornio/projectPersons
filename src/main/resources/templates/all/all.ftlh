@@ -8,7 +8,6 @@
     <title>Все пользователи</title>
 </head>
 <body>
-<#if persons??>
 <h2>Список всех пользователей</h2>
 <table>
     <tr>
@@ -16,7 +15,6 @@
         <th>Фамилия И.</th>
     </tr>
 </table>
-
 <#list persons as person>
     <tr>
         <td>${person.id}</td>
@@ -24,8 +22,5 @@
         <br>
     </tr>
 </#list>
-<#else>
-    <h2>Список пользователей пока пуст.</h2>
-</#if>
 </body>
 </html>

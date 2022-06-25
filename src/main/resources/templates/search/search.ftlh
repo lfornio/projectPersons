@@ -15,6 +15,5 @@
         <input type="submit" value="Поиск" required>
     </label>
 </form>
-
 </body>
 </html>
