@@ -11,15 +11,14 @@
 <h1>Привет, давай знакомиться!</h1>
 <h1>Введи свои данные</h1>
 
-<form method="post" action="/persons/add">
+<form method="post">
     <label>Имя:
-        <input name="firstName" placeholder="Имя">
+        <input name="firstName" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё]*" required>
     </label>
     <label>Фамилия:
-        <input name="lastName" placeholder="Фамилия">
+        <input name="lastName" placeholder="Фамилия" pattern="[A-Za-zА-Яа-яЁё]*" required>
     </label>
     <input type="submit" value="Отправить">
 </form>
-
 </body>
 </html>

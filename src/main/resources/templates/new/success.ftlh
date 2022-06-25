@@ -9,5 +9,8 @@
 </head>
 <body>
 <h1>${person.name}, приятно познакомиться! Твой id ${person.id}</h1>
+<div>
+    <a href="/">На главную</a>
+</div>
 </body>
 </html>
