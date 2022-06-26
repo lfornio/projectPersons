@@ -13,10 +13,10 @@
 
 <form method="post">
     <label>Имя:
-        <input name="firstName" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё]*" required>
+        <input name="name" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё]*" required>
     </label>
     <label>Фамилия:
-        <input name="lastName" placeholder="Фамилия" pattern="[A-Za-zА-Яа-яЁё]*" required>
+        <input name="surname" placeholder="Фамилия" pattern="[A-Za-zА-Яа-яЁё]*" required>
     </label>
     <input type="submit" value="Отправить">
 </form>
