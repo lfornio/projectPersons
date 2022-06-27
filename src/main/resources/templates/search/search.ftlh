@@ -15,5 +15,6 @@
         <input type="submit" value="Поиск" required>
     </label>
 </form>
+<a href="/">На главную</a>
 </body>
 </html>
