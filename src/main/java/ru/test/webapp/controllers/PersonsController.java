@@ -3,49 +3,59 @@ package ru.test.webapp.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import ru.test.webapp.models.Person;
-import ru.test.webapp.repositories.PersonsRepositoryDao;
+import ru.test.webapp.services.PersonsService;
 
-import java.util.List;
+import java.util.Optional;
 
 @Controller
+@RequestMapping("/persons")
 public class PersonsController {
 
-    private final PersonsRepositoryDao personsRepositoryDao;
+    private final PersonsService personsService;
 
     @Autowired
-    public PersonsController(PersonsRepositoryDao personsRepositoryDao) {
-        this.personsRepositoryDao = personsRepositoryDao;
+    public PersonsController(PersonsService personsService) {
+        this.personsService = personsService;
     }
 
-
-    @GetMapping("/persons/new")
+    @GetMapping("/new")
     public String getPageForAddNewPerson(){
         return "new/new";
     }
 
-    @PostMapping("/persons/add")
-    public String addNewPerson(@RequestParam("firstName") String firstName,
-                               @RequestParam("lastName") String lastName,
-                               Model model) {
-        System.out.println(firstName + " " + lastName);
-
-        Person person = new Person(firstName, lastName);
-        personsRepositoryDao.addPerson(person);
-        System.out.println(personsRepositoryDao.getAllPersons());
-        model.addAttribute("person", person);
-
+    @PostMapping("/new")
+    public String addNewPerson(@ModelAttribute("person") Person person) {
+        personsService.addPersonRest(person);
         return "new/success";
     }
 
-    @GetMapping("/persons")
+    @GetMapping
     public String getAllPersonsPage(Model model){
-        List<Person> persons = personsRepositoryDao.getAllPersons();
+        Iterable<Person> persons = personsService.getAllPersons();
         model.addAttribute("persons", persons);
-        return "";
+        return "all/all";
+    }
+
+    @GetMapping("/search")
+    public String findPerson(){
+        return "search/search";
+    }
+
+    @GetMapping("/search/id")
+    public String findPersonId(@RequestParam("id") Long id){
+        Optional<Person> person = personsService.getPersonById(id);
+        return "redirect:/persons/" + id;
+    }
+//
+    @GetMapping("/{id}")
+    public String showPerson(@PathVariable("id") Long id, Model model){
+        Optional<Person> person = personsService.getPersonById(id);
+        if(person.isPresent()) {
+            model.addAttribute("person", person.get());
+        }
+        return "search/person";
     }
 }
 
