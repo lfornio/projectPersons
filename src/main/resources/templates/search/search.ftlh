@@ -11,8 +11,8 @@
 <h1>Поиск пользователя:</h1>
 <form method="get" action="/persons/search/id">
     <label>Введи id пользователя
-    <input name="id" placeholder="id" type="number" min="1">
-        <input type="submit" value="Поиск" required>
+    <input name="id" placeholder="id" type="number" min="1" required>
+        <input type="submit" value="Поиск">
     </label>
 </form>
 <a href="/">На главную</a>
