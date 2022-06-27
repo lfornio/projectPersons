@@ -12,25 +12,24 @@
 <h3>Обработка запросов в формате JSON с помощью программы Postman</h3>
 
 <h4>POST запрос</h4>
-<p>lfornio.ru/api/persons/new</p>
-<p><img src="/preview/post.png"></p>
-
+<i>lfornio.ru/api/persons/new</i>
+<img src="/preview/post.png" width="500">
 <h4>GET запрос всех пользователей</h4>
-<p>lfornio.ru/api/persons</p>
+<i>lfornio.ru/api/persons</i>
 <ul>
   <li>Cписок пользователей</li>
-  <p><img src="/preview/get_all.png"></p>
+  <p><img src="/preview/get_all.png" width="500"></p>
   <li>Если список пользователей пуст</li>
-  <p><img src="/preview/get_all_if_empty.png"></p>
+  <img src="/preview/get_all_if_empty.png" width="500">
 </ul>
 
 <h4>GET запрос по id</h4>
-<p>lfornio.ru/api/persons/{id}</p>
+<i>lfornio.ru/api/persons/{id}</i>
 <ul>
   <li>Если id валидный</li>
-  <p><img src="/preview/get_by_id.png"></p>
+  <img src="/preview/get_by_id.png" width="500">
   <li>Если id не валидный</li>
-  <p><img src="/preview/get_by_id_not_valid.png"></p>
+  <img src="/preview/get_by_id_not_valid.png" width="500">
 </ul>
 
-Дополнительно реализован графический интерфейс по адресу: <a href="http://lfornio.ru/"> http://lfornio.ru/</a>
+Реализован графический интерфейс по адресу: <a href="http://lfornio.ru/"> http://lfornio.ru/</a>
