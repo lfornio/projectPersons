@@ -9,12 +9,12 @@
 </head>
 <body>
 <h2>Список всех пользователей</h2>
-<table border=1px>
+<table>
     <tr>
         <th>Id</th>
         <th>Фамилия И.</th>
     </tr>
-
+</table>
 <#list persons as person>
     <tr>
         <td>${person.id}</td>
@@ -22,7 +22,7 @@
         <br>
     </tr>
 </#list>
-</table>
+
 <a href="/">На главную</a>
 </body>
 </html>
