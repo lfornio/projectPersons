@@ -32,8 +32,5 @@
   <img src="/preview/get_by_id_not_valid.png" width="500">
 </ul>
 
-<<<<<<< HEAD
 Реализован графический интерфейс по адресу: <a href="http://lfornio.ru/"> http://lfornio.ru/</a>
-=======
-Реализован графический интерфейс по адресу: <a href="http://lfornio.ru/"> http://lfornio.ru/</a>
->>>>>>> 7f401f6b428deec2b5b1aaacd54c16063d0a5be9
+
